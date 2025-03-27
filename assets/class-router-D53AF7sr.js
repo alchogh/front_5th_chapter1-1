@@ -16,16 +16,16 @@
  <footer class="bg-gray-200 p-4 text-center">
      <p>&copy; 2024 항해플러스. All rights reserved.</p>
   </footer>
-`;class f extends i{template(){const e=d(),t=window.location.pathname||"#/";console.log(t);const l=o=>t===`${o}`?"text-blue-600 font-bold":"text-gray-600";return`
+`;class f extends i{template(){const e=d(),t=window.location.pathname||"#/",l=o=>t===`${o}`?"text-blue-600 font-bold":"text-gray-600";return`
       <header class="bg-blue-600 text-white p-4 sticky top-0">
             <h1 class="text-2xl font-bold">항해플러스</h1>
     </header>
 
     <nav class="bg-white shadow-md p-2 sticky top-14">
       <ul class="flex justify-around">
-        <li><a href="/" id="home" class="${l("")}">홈</a></li>
+        <li><a href="/" id="home" class="${l("/")}">홈</a></li>
         ${e?`<li>
-                  <a href="/profile" id="profile" class="${l("profile")}">
+                  <a href="/profile" id="profile" class="${l("/profile")}">
                     프로필
                   </a>
               </li>`:""}
