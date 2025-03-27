@@ -1,4 +1,4 @@
-(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const o of document.querySelectorAll('link[rel="modulepreload"]'))r(o);new MutationObserver(o=>{for(const l of o)if(l.type==="childList")for(const a of l.addedNodes)a.tagName==="LINK"&&a.rel==="modulepreload"&&r(a)}).observe(document,{childList:!0,subtree:!0});function t(o){const l={};return o.integrity&&(l.integrity=o.integrity),o.referrerPolicy&&(l.referrerPolicy=o.referrerPolicy),o.crossOrigin==="use-credentials"?l.credentials="include":o.crossOrigin==="anonymous"?l.credentials="omit":l.credentials="same-origin",l}function r(o){if(o.ep)return;o.ep=!0;const l=t(o);fetch(o.href,l)}})();const c=s=>{localStorage.setItem("user",JSON.stringify(s))},d=()=>JSON.parse(localStorage.getItem("user")),x=()=>{localStorage.removeItem("user")};class i{constructor(e,t={}){this.$target=e,this.props=t,this.render()}template(){return""}setEvent(){}render(){this.$target.innerHTML=this.template(),this.setEvent()}}class u extends i{template(){return`
+(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const o of document.querySelectorAll('link[rel="modulepreload"]'))l(o);new MutationObserver(o=>{for(const r of o)if(r.type==="childList")for(const n of r.addedNodes)n.tagName==="LINK"&&n.rel==="modulepreload"&&l(n)}).observe(document,{childList:!0,subtree:!0});function t(o){const r={};return o.integrity&&(r.integrity=o.integrity),o.referrerPolicy&&(r.referrerPolicy=o.referrerPolicy),o.crossOrigin==="use-credentials"?r.credentials="include":o.crossOrigin==="anonymous"?r.credentials="omit":r.credentials="same-origin",r}function l(o){if(o.ep)return;o.ep=!0;const r=t(o);fetch(o.href,r)}})();const c=s=>{localStorage.setItem("user",JSON.stringify(s))},d=()=>JSON.parse(localStorage.getItem("user")),x=()=>{localStorage.removeItem("user")};class i{constructor(e,t={}){this.$target=e,this.props=t,this.render()}template(){return""}setEvent(){}render(){this.$target.innerHTML=this.template(),this.setEvent()}}class u extends i{template(){return`
     <main class="bg-gray-100 flex items-center justify-center min-h-screen">
       <div class="bg-white p-8 rounded-lg shadow-md w-full text-center" style="max-width: 480px">
         <h1 class="text-2xl font-bold text-blue-600 mb-4">항해플러스</h1>
@@ -16,16 +16,16 @@
  <footer class="bg-gray-200 p-4 text-center">
      <p>&copy; 2024 항해플러스. All rights reserved.</p>
   </footer>
-`;class p extends i{template(){const e=d(),t=window.location.hash||"#/",r=o=>t===`#${o}`?"text-blue-600 font-bold":"text-gray-600";return`
+`;class p extends i{template(){const e=d(),t=window.location.hash||"#/",l=o=>t===`#${o}`?"text-blue-600 font-bold":"text-gray-600";return`
       <header class="bg-blue-600 text-white p-4 sticky top-0">
             <h1 class="text-2xl font-bold">항해플러스</h1>
     </header>
 
     <nav class="bg-white shadow-md p-2 sticky top-14">
       <ul class="flex justify-around">
-        <li><a href="/" id="home" class="${r("/")}">홈</a></li>
+        <li><a href="/" id="home" class="${l("/")}">홈</a></li>
         ${e?`<li>
-                  <a href="/profile" id="profile" class="${r("/profile")}">
+                  <a href="/profile" id="profile" class="${l("/profile")}">
                     프로필
                   </a>
               </li>`:""}
@@ -66,7 +66,7 @@
      ${m()}
     </div>
   </div>
-    `}}class h extends i{template(){return`
+    `}}class b extends i{template(){return`
         <main class="bg-gray-100 flex items-center justify-center min-h-screen">
     <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
       <h1 class="text-2xl font-bold text-center text-blue-600 mb-8">항해플러스</h1>
@@ -88,7 +88,7 @@
       </div>
     </div>
   </main>
-    `}setEvent(){const e=this.$target.querySelector("#login-form");e&&e.addEventListener("submit",t=>{t.preventDefault();const r=e.querySelector("#username").value.trim();r.length?(c({username:r,email:"",bio:""}),n.navigateTo("/")):alert("아이디를 입력해주세요.")})}}class b extends i{template(){const{user:e}=this.props;return`
+    `}setEvent(){const e=this.$target.querySelector("#login-form");e&&e.addEventListener("submit",t=>{t.preventDefault();const l=e.querySelector("#username").value.trim();l.length?(c({username:l,email:"",bio:""}),a.navigateTo("/")):alert("아이디를 입력해주세요.")})}}class g extends i{template(){const{user:e}=this.props;return`
     <div>
   <div class="bg-gray-100 min-h-screen flex justify-center">
     <div class="max-w-md w-full">
@@ -156,4 +156,4 @@
     </div>
   </div>
 </div>
-    `}setEvent(){(()=>{const t=document.getElementById("profile-form");t&&t.addEventListener("submit",r=>{r.preventDefault();const o=t.querySelector("#username").value.trim(),l=t.querySelector("#email").value.trim(),a=t.querySelector("#bio").value.trim(),v={...JSON.parse(localStorage.getItem("user")),username:o,email:l,bio:a};c(v),alert("프로필이 수정되었습니다"),g()})})()}}const g=()=>{const s=window.location.pathname,e=document.getElementById("root"),t=d();if(t&&s==="/login"){history.pushState({},"","/"),g();return}s==="/"?document.getElementById("root").innerHTML=f(t):s==="/profile"?t?new b(e,{user:t}):alert("로그인이 필요합니다"):s==="/login"?new h(e):document.getElementById("root").innerHTML=u()};class w{constructor(){this.routes={},window.addEventListener("popstate",this.handlePopState.bind(this))}addRoute(e,t){this.routes[e]=t}navigateTo(e){const r=`${"/front_5th_chapter1-1/".replace(/\/$/,"")}${e}`;history.pushState(null,"",r),this.handleRoute(r)}handlePopState(){this.handleRoute(window.location.pathname)}handleRoute(e){const t="/front_5th_chapter1-1/".replace(/\/$/,""),r=e.replace(t,"")||"/",o=this.routes[r],l=document.getElementById("root"),a=d();if(a&&r==="/login"){this.navigateTo("/");return}if(!a&&r==="/profile"){this.navigateTo("/login");return}o?o(a):l&&new u(l)}}const n=new w,E={init:()=>{n.addRoute("/",s=>{const e=document.getElementById("root");new f(e,{user:s})}),n.addRoute("/login",()=>{const s=document.getElementById("root");new h(s)}),n.addRoute("/profile",s=>{const e=document.getElementById("root");new b(e,{user:s})}),n.handleRoute(window.location.pathname),document.addEventListener("click",s=>{var t;const e=s.target.closest("a");if(e&&e.id==="logout"&&(s.preventDefault(),x(),n.navigateTo("/login")),e&&((t=e.getAttribute("href"))!=null&&t.startsWith("/"))){s.preventDefault();const r=e.getAttribute("href");n.navigateTo(r)}})}};export{E as C,u as E,h as L,f as M,b as P,d as g,x as r};
+    `}setEvent(){(()=>{const t=document.getElementById("profile-form");t&&t.addEventListener("submit",l=>{l.preventDefault();const o=t.querySelector("#username").value.trim(),r=t.querySelector("#email").value.trim(),n=t.querySelector("#bio").value.trim(),v={...JSON.parse(localStorage.getItem("user")),username:o,email:r,bio:n};c(v),alert("프로필이 수정되었습니다"),h()})})()}}const h=()=>{const s=window.location.pathname,e=document.getElementById("root"),t=d();if(t&&s==="/login"){history.pushState({},"","/"),h();return}s==="/"?document.getElementById("root").innerHTML=f(t):s==="/profile"?t?new g(e,{user:t}):alert("로그인이 필요합니다"):s==="/login"?new b(e):document.getElementById("root").innerHTML=u()};class w{constructor(){this.routes={},window.addEventListener("popstate",this.handlePopState.bind(this))}addRoute(e,t){this.routes[e]=t}navigateTo(e){history.pushState(null,"",e),this.handleRoute(e)}handlePopState(){this.handleRoute(window.location.pathname)}handleRoute(e){const t=this.routes[e],l=document.getElementById("root"),o=d();if(o&&e==="/login"){this.navigateTo("/");return}if(!o&&e==="/profile"){this.navigateTo("/login");return}if(t)t(o);else if(l){const r=document.getElementById("root");new u(r)}}}const a=new w,E={init:()=>{a.addRoute("/",s=>{const e=document.getElementById("root");new f(e,{user:s})}),a.addRoute("/login",()=>{const s=document.getElementById("root");new b(s)}),a.addRoute("/profile",s=>{const e=document.getElementById("root");new g(e,{user:s})}),a.handleRoute(window.location.pathname),document.addEventListener("click",s=>{var t;const e=s.target.closest("a");if(e&&e.id==="logout"&&(s.preventDefault(),x(),a.navigateTo("/login")),e&&((t=e.getAttribute("href"))!=null&&t.startsWith("/"))){s.preventDefault();const l=e.getAttribute("href");a.navigateTo(l)}})}};export{E as C,u as E,b as L,f as M,g as P,d as g,x as r};
