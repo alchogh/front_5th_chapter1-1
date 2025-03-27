@@ -16,7 +16,7 @@
  <footer class="bg-gray-200 p-4 text-center">
      <p>&copy; 2024 항해플러스. All rights reserved.</p>
   </footer>
-`;class p extends i{template(){const e=d(),t=window.location.hash||"#/",l=o=>t===`#${o}`?"text-blue-600 font-bold":"text-gray-600";return`
+`;class p extends i{template(){const e=d(),t=window.location.pathname||"#/";console.log(t);const l=o=>t===`${o}`?"text-blue-600 font-bold":"text-gray-600";return`
       <header class="bg-blue-600 text-white p-4 sticky top-0">
             <h1 class="text-2xl font-bold">항해플러스</h1>
     </header>
